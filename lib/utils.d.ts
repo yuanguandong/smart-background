@@ -1,5 +1,11 @@
-export declare const keyReg: RegExp;
-export declare const splitKey: (str: string) => Array<string> | null;
-export declare const isSpecialKey: (key: string) => boolean;
-export declare const validatKey: (e: any, ename: string) => boolean | undefined;
-export declare const validPropName: (e: KeyboardEvent, keyName: string) => boolean;
+export declare function randomNum(minNum: number, maxNum: number): number;
+export declare const getPosition: (random: any, fontSize: number) => {
+    fontSize: number;
+    top?: undefined;
+    left?: undefined;
+} | {
+    fontSize: number;
+    top: string;
+    left: string;
+};
+export declare function generateUuid(len?: number, radix?: number): string;

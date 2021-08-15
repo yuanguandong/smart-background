@@ -1,9 +1,23 @@
-interface KeyEventProps {
-    events: {
-        [key: string]: (e: KeyboardEvent) => void;
-    };
-    needFocusing?: boolean;
+import { ReactNode } from 'react';
+import './index.less';
+declare type Animation = {
+    type: 'left' | 'right' | 'top' | 'bottom';
+    speed: number;
+};
+interface SmartBackgroundProps {
+    symbols?: (string | ReactNode | Element)[];
+    random?: {
+        fontSizeRange: number[];
+    } | undefined;
+    underlayColor?: string;
+    underlayImage?: string;
+    symbolsStyle?: Object;
+    rotate?: number;
+    symbolSize?: number;
+    gap?: number;
+    animation?: Animation | undefined;
+    exact?: boolean;
     [key: string]: any;
 }
-declare const KeyEvent: (props: KeyEventProps) => JSX.Element;
-export default KeyEvent;
+declare const SmartBackground: (props: SmartBackgroundProps) => JSX.Element;
+export default SmartBackground;
