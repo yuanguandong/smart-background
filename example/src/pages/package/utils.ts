@@ -13,20 +13,16 @@ export function randomNum(minNum: number, maxNum: number) {
 }
 
 export const getPosition = (random:any, fontSize:number) => {
-  console.log('random',random)
   if(!random){
-    console.log('fontSize',fontSize)
     return {
       fontSize
     }
   }
   const {fontSizeRange} = random
-  console.log('fontSizeRange',fontSizeRange)
   const [minNum, maxNum] = fontSizeRange;
   const fontSizeFin = randomNum(minNum, maxNum);
   const top = randomNum(0, 100) + '%';
   const left = randomNum(0, 100) + '%';
-  console.log('1',{ fontSize:fontSizeFin, top, left })
   return { fontSize:fontSizeFin, top, left };
 };
 
