@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
+    "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@umijs/preset-react": "1.x",
     "classnames": "^2.3.1",
