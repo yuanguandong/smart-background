@@ -19,7 +19,17 @@ import {
   FaYinYang
 } from 'react-icons/fa';
 import { Helmet } from 'umi';
-import { Api, Code, Code0, Code1, Code2, Code3, Code4, Footer } from './components';
+import packageInfo from '../config';
+import {
+  Api,
+  Code,
+  Code0,
+  Code1,
+  Code2,
+  Code3,
+  Code4,
+  Footer
+} from './components';
 import './index.less';
 import Intro from './intro';
 import Background from './package';
@@ -107,16 +117,13 @@ const Index: React.FunctionComponent<IProps> = () => {
           Smart Background —— An React Component Automatically generate the
           background
         </title>
-        <link
-          rel="canonical"
-          href="https://yuanguandong.github.io/react-keyevent/"
-        />
+        <link rel="canonical" href={packageInfo.homePageUrl} />
         <link rel="shortcut icon" type="image/x-icon" href="/assets/logo.png" />
       </Helmet>
       <div className="App">
         <a
           className="github"
-          href="https://github.com/yuanguandong/react-keyevent"
+          href={packageInfo.homePageUrl}
           target="_blank"
         ></a>
 
@@ -130,19 +137,30 @@ const Index: React.FunctionComponent<IProps> = () => {
           animation={{ type: 'top', speed: 5 }}
           gap={20}
           symbols={icons}
-        />
+        >
+          <a
+            className="github"
+            href={packageInfo.homePageUrl}
+            style={{
+              backgroundImage: `url(https://img.shields.io/github/stars/yuanguandong/${packageInfo.packageName}?style=social)`,
+            }}
+            target="_blank"
+          ></a>
+        </Background>
 
         <div className="wrap">
           <div className="alignCenter">
-            <div className="logo">
+            <div className="">
               {/* <img className="logoImage" src={Logo} alt="react-keyevent" /> */}
+              <div className="logo" style={{ color: '#fff' }}>
+                {packageInfo.symbol}
+              </div>
               <span className="name" style={{ color: '#fff' }}>
                 Smart Background
               </span>
             </div>
           </div>
           <Intro />
-
           <div className="container">
             <Background
               underlayColor="#f00"
@@ -165,20 +183,17 @@ const Index: React.FunctionComponent<IProps> = () => {
               </div>
             </Background>
           </div>
-
           {/* <Title level={2}>Easy To Use 容易使用</Title> */}
           <Paragraph>默认以圆点作为符号</Paragraph>
           <Code content={Code0} />
-
           <Title level={2}>Animation 动画</Title>
           <Paragraph>支持四个方向的滚动循环动画，可以控制速度</Paragraph>
           <Paragraph>GPU rendering, Does not occupy the js process</Paragraph>
           <Paragraph>GPU 渲染, 动画不占用javascript线程</Paragraph>
-
           <div className="container">
             <Background
-              underlayImage='linear-gradient(to right, #434343 0%, black 100%)'
-              symbolsStyle={{color:'rgba(255,255,255,0.8)'}}
+              underlayImage="linear-gradient(to right, #434343 0%, black 100%)"
+              symbolsStyle={{ color: 'rgba(255,255,255,0.8)' }}
               symbolSize={20}
               gap={20}
               animation={{ type: 'right', speed: 5 }}
@@ -218,12 +233,9 @@ const Index: React.FunctionComponent<IProps> = () => {
               </div>
             </Background>
           </div>
-
           <Code content={Code1} />
-
           <Title level={2}>Curtain 幕布</Title>
           <Paragraph>使用适当的实现可以很方便的实现一个图片幕布墙</Paragraph>
-
           <div className="container">
             <Background
               symbolsStyle={{ opacity: 1 }}
@@ -263,12 +275,9 @@ const Index: React.FunctionComponent<IProps> = () => {
               </div>
             </Background>
           </div>
-
           <Code content={Code2} />
-
           <Title level={2}>Exact 精确模式</Title>
           <Paragraph>使用精确模式，可以让元素固定在某一位置</Paragraph>
-
           <div className="container">
             <Background
               symbolsStyle={{ opacity: 1 }}
@@ -307,12 +316,9 @@ const Index: React.FunctionComponent<IProps> = () => {
               </div>
             </Background>
           </div>
-
           <Code content={Code3} />
-
           <Title level={2}>Random 随机模式</Title>
           <Paragraph>使用随机模式，可以让元素位置随机显示</Paragraph>
-
           <div className="container">
             <Background
               symbols={icons1}
@@ -338,15 +344,12 @@ const Index: React.FunctionComponent<IProps> = () => {
               </div>
             </Background>
           </div>
-
           <Code content={Code4} />
-
           <Title level={2}>Why 为什么？</Title>
-          在开发过程中，我们经常会遇到使用背景的地方，寻找契合业务的主题十分耗费精力，总觉得做的背景不合适，如果直接用图片呢，逻辑是比较简单，但寻找到一张契合业务主题的图片也不是那么容易，所以想到用符号生成幕布一样的背景，从这个出发点做了这个组件，滚动的图片墙可能这个需求比较常见，用SmartBackground可以很快速的实现，希望可以帮到您，别忘了star哟
-
+          在开发过程中，我们经常会遇到使用背景的地方，比如登录页面，用户信息页面，封面图……
+          寻找契合业务的主题十分耗费精力，总觉得做的背景不合适，如果直接用图片呢，逻辑是比较简单，但寻找到一张契合业务主题的图片也不是那么容易，所以想到用符号生成幕布一样的背景，从这个出发点做了这个组件，滚动的图片墙可能这个需求比较常见，用SmartBackground可以很快速的实现，希望可以帮到您，别忘了star哟
           <Title level={2}>Props</Title>
-          <Api/>
-          
+          <Api />
           <Footer />
         </div>
       </div>
