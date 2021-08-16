@@ -19,6 +19,7 @@ const styles: any = {
     backgroundRepeat: "repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
+    pointerEvents: 'none'
   },
 };
 
@@ -165,7 +166,7 @@ const SmartBackground = (props: SmartBackgroundProps) => {
           </SymbolList>
         ))}
       </div>
-      <div
+      {children && <div
         style={{
           position: "absolute",
           width: "100%",
@@ -175,7 +176,7 @@ const SmartBackground = (props: SmartBackgroundProps) => {
         }}
       >
         {children}
-      </div>
+      </div>}
     </>
   );
 };
