@@ -19,7 +19,7 @@ const styles: any = {
     backgroundRepeat: "repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    pointerEvents: 'none'
+    pointerEvents: "none",
   },
 };
 
@@ -39,6 +39,8 @@ interface SmartBackgroundProps {
   gap?: number; //符号间距
   animation?: Animation | undefined; //滚动动画
   exact?: boolean; //精确模式
+  childrenWrapClassName?: string; //子组件容器类名
+  childrenWrapStyle?: React.CSSProperties; //子组件容器类名
   [key: string]: any;
 }
 
@@ -55,6 +57,8 @@ const SmartBackground = (props: SmartBackgroundProps) => {
     gap: _gap = 10,
     animation,
     exact = false,
+    childrenWrapClassName,
+    childrenWrapStyle,
 
     children,
     style,
@@ -128,6 +132,8 @@ const SmartBackground = (props: SmartBackgroundProps) => {
     });
   }, []);
 
+  console.log('childrenWrapClassName',childrenWrapClassName)
+
   return (
     <>
       <div
@@ -166,17 +172,22 @@ const SmartBackground = (props: SmartBackgroundProps) => {
           </SymbolList>
         ))}
       </div>
-      {children && <div
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          top: 0,
-          left: 0,
-        }}
-      >
-        {children}
-      </div>}
+      {children && (
+        <div
+          className={childrenWrapClassName}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            top: 0,
+            left: 0,
+            overflowY: "auto",
+            ...childrenWrapStyle
+          }}
+        >
+          {children}
+        </div>
+      )}
     </>
   );
 };

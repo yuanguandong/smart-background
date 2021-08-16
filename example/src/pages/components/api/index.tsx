@@ -62,10 +62,17 @@ export default (props:any)=>{
       default: ``,
       required: `false`
     },{
-      prop: `exact`,
-      desc: `精确模式`,
-      type: `boolean`,
-      default: `false`,
+      prop: `childrenWrapClassName`,
+      desc: `子组件容器类名`,
+      type: `string`,
+      default: ``,
+      required: `false`
+    },
+    {
+      prop: `childrenWrapStyle`,
+      desc: `子组件容器类名`,
+      type: `React.CSSProperties`,
+      default: ``,
       required: `false`
     }
   ];

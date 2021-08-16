@@ -50,15 +50,17 @@ const styles = {
 
 ### Props
 
-| property      | description                | type                                                           | defaultValue                   | required |
-| ------------- | -------------------------- | -------------------------------------------------------------- | ------------------------------ | -------- |
-| symbols       | 元素/字符/符号集合         | (string \| ReactNode    \| Element)[ ]                         | ['●']                          | false    |
-| random        | 符号是否随机生成位置和大小 | { fontSizeRange: number[] } \| undefined                       |                                | false    |
-| underlayColor | 底衬颜色                   | string                                                         |                                | false    |
-| underlayImage | 底衬图片                   | string                                                         |                                | false    |
-| symbolsStyle  | 符号样式                   | Object                                                         | {color: '#000', opacity: '0.3'} | false    |
-| rotate        | 符号旋转角度               | number                                                         | 0                              | false    |
-| symbolSize    | 符号大小                   | number                                                         | 90                             | false    |
-| gap           | 符号间距                   | number                                                         | 10                             | false    |
-| animation     | 滚动动画                   | {type: 'left' \| 'right' \| 'top' \| 'bottom'; speed: number;} |                                | false    |
-| exact         | 精确模式                   | boolean                                                        | false                          | false    |
+| property              | description                | type                                                           | defaultValue                    | required |
+| --------------------- | -------------------------- | -------------------------------------------------------------- | ------------------------------- | -------- |
+| symbols               | 元素/字符/符号集合         | (string \| ReactNode    \| Element)[ ]                         | ['●']                           | false    |
+| random                | 符号是否随机生成位置和大小 | { fontSizeRange: number[] } \| undefined                       |                                 | false    |
+| underlayColor         | 底衬颜色                   | string                                                         |                                 | false    |
+| underlayImage         | 底衬图片                   | string                                                         |                                 | false    |
+| symbolsStyle          | 符号样式                   | Object                                                         | {color: '#000', opacity: '0.3'} | false    |
+| rotate                | 符号旋转角度               | number                                                         | 0                               | false    |
+| symbolSize            | 符号大小                   | number                                                         | 90                              | false    |
+| gap                   | 符号间距                   | number                                                         | 10                              | false    |
+| animation             | 滚动动画                   | {type: 'left' \| 'right' \| 'top' \| 'bottom'; speed: number;} |                                 | false    |
+| exact                 | 精确模式                   | boolean                                                        | false                           | false    |
+| childrenWrapClassName | 子组件容器类名             | string                                                         |                                 | false    |
+| childrenWrapStyle     | 子组件容器类名             | React.CSSProperties                                            |                                 | false    |

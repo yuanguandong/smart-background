@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import "./style.ts";
 declare type Animation = {
     type: "left" | "right" | "top" | "bottom";
@@ -17,6 +17,8 @@ interface SmartBackgroundProps {
     gap?: number;
     animation?: Animation | undefined;
     exact?: boolean;
+    childrenWrapClassName?: string;
+    childrenWrapStyle?: React.CSSProperties;
     [key: string]: any;
 }
 declare const SmartBackground: (props: SmartBackgroundProps) => JSX.Element;
