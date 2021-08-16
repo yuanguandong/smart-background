@@ -56,7 +56,7 @@ const styles = {
 | random        | 符号是否随机生成位置和大小 | { fontSizeRange: number[] } \| undefined                       |                                | false    |
 | underlayColor | 底衬颜色                   | string                                                         |                                | false    |
 | underlayImage | 底衬图片                   | string                                                         |                                | false    |
-| symbolsStyle  | 符号样式                   | Object                                                         | color: '#000', opacity: '0.3', | false    |
+| symbolsStyle  | 符号样式                   | Object                                                         | {color: '#000', opacity: '0.3'} | false    |
 | rotate        | 符号旋转角度               | number                                                         | 0                              | false    |
 | symbolSize    | 符号大小                   | number                                                         | 90                             | false    |
 | gap           | 符号间距                   | number                                                         | 10                             | false    |

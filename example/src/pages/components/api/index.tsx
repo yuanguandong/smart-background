@@ -32,8 +32,7 @@ export default (props:any)=>{
       prop: `symbolsStyle`,
       desc: `符号样式`,
       type: `Object`,
-      default: `color: '#000',
-      opacity: '0.3',`,
+      default: `{color: '#000',opacity: '0.3'}`,
       required: `false`
     },{
       prop: `rotate`,

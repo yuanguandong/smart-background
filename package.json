@@ -1,6 +1,6 @@
 {
   "name": "smart-background",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Automatically generate the background of the symbol picture, so you no longer have to worry about the background 自动生成符号背景，让你不再为背景头疼",
   "keywords": [
     "react",
@@ -26,10 +26,10 @@
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "scripts": {
-    "start":"cd example && npm start",
+    "start": "cd example && npm start",
     "dev": "set NODE_ENV=developemnt&& rollup -c rollup.config.js -w",
     "build": "rm -rf lib && set NODE_ENV=production && rollup -c rollup.config.js",
-    "init":"mkdir /Volumes/mac/github/smart-background/example/src/pages/package && ln -s /Volumes/mac/github/smart-background/src/* /Volumes/mac/github/smart-background/example/src/pages/package"
+    "init": "mkdir /Volumes/mac/github/smart-background/example/src/pages/package && ln -s /Volumes/mac/github/smart-background/src/* /Volumes/mac/github/smart-background/example/src/pages/package"
   },
   "types": "lib/index.d.ts",
   "devDependencies": {
@@ -38,6 +38,7 @@
     "@types/react": "^17.0.13",
     "@typescript-eslint/parser": "^4.28.2",
     "react": "^17.0.2",
+    "react-resize-detector": "^6.7.6",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-less": "^1.1.3",

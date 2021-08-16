@@ -27,6 +27,7 @@
     "@umijs/preset-react": "1.x",
     "classnames": "^2.3.1",
     "react-icons": "^4.2.0",
+    "react-resize-detector": "^6.7.6",
     "react-syntax-highlighter": "^15.4.3",
     "umi": "^3.5.2"
   },
