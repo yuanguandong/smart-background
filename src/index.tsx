@@ -140,6 +140,7 @@ const SmartBackground = (props: SmartBackgroundProps) => {
       >
         {repeatArr.map((index) => (
           <SymbolList
+            key={index}
             animation={animation}
             random={random}
             exact={exact}
