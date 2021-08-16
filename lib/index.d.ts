@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
-import './style.ts';
+import { ReactNode } from "react";
+import "./style.ts";
 declare type Animation = {
-    type: 'left' | 'right' | 'top' | 'bottom';
+    type: "left" | "right" | "top" | "bottom";
     speed: number;
 };
 interface SmartBackgroundProps {

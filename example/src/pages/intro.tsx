@@ -5,7 +5,7 @@ export default () => {
   return (
     <Typography style={{textAlign:'center',color:'#fff'}}>
       <Title style={{color:'#fff'}} level={1}>An React Component Can Automatically Generate The Background </Title>
-      <Title style={{color:'#fff'}}  level={4}>快速生成元素背景</Title>
+      <Title style={{color:'#fff'}}  level={4}>一个快速生成元素背景的react组件</Title>
     </Typography>
   );
 };
