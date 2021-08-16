@@ -99,5 +99,5 @@ export default (props:any)=>{
     },
   ];
   
-  return <Table bordered dataSource={dataSource} columns={columns} pagination={false}/>
+  return <Table rowKey={'prop'} bordered dataSource={dataSource} columns={columns} pagination={false}/>
 }

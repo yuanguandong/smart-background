@@ -28,7 +28,7 @@ const esPlugin = eslint({
 const commonConf = {
   input: getPath("./src/index.tsx"),
   external: ["react"],
-  plugins: [uglify(), resolve(extensions), less(), commonjs(), esPlugin, tsPlugin],
+  plugins: [uglify(), less(), resolve(extensions), commonjs(), esPlugin, tsPlugin],
 };
 // 需要导出的模块类型
 const outputMap = [

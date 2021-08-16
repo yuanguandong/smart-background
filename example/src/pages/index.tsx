@@ -32,6 +32,7 @@ import {
 } from './components';
 import './index.less';
 import Intro from './intro';
+// import Background from 'smart-background';
 import Background from './package';
 const { Title, Paragraph, Text, Link } = Typography;
 

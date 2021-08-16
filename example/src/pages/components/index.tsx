@@ -7,7 +7,5 @@ export { default as Code2 } from './Code2'
 export { default as Code3 } from './Code3'
 export { default as Code4 } from './Code4'
 export { default as Footer } from './Footer'
-export { default as LeftSide } from './LeftSide'
-export { default as RightSide } from './RightSide'
-export { default as TopSide } from './TopSide'
+
 

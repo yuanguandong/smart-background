@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import React, { ReactNode, useEffect, useMemo, useRef, useState } from 'react';
-import './index.less';
+import stylesArr from './style';
+import './style.ts';
 import { getPosition } from './utils';
-
 const REPEAT = [1, 2];
 
 const styles: any = {
@@ -105,6 +105,27 @@ const SmartBackground = (props: SmartBackgroundProps) => {
     return arr;
   }, [amount, symbols]);
 
+  useEffect(() => {
+    let styleSheet: any = document.styleSheets[0];
+    const styleLength = styleSheet.cssRules.length;
+    let hasLoadCss = false;
+    for (let i = styleLength - 1; i > 0; i--) {
+      if (
+        styleSheet['cssRules'][i] &&
+        styleSheet['cssRules'][i]['name'] === 'smart-background-scroll-top'
+      ) {
+        hasLoadCss = true;
+        break;
+      }
+    }
+    if (hasLoadCss) {
+      return;
+    }
+    stylesArr.forEach((style) => {
+      styleSheet.insertRule(style, styleLength);
+    });
+  }, []);
+
   return (
     <>
       <div
@@ -119,6 +140,7 @@ const SmartBackground = (props: SmartBackgroundProps) => {
       >
         {repeatArr.map((index) => (
           <SymbolList
+            key={index}
             animation={animation}
             random={random}
             exact={exact}
@@ -174,7 +196,7 @@ const SymbolList = styled.div<{
     if (!p.animation) {
       return;
     }
-    return `scroll-${p.animation.type} ${
+    return `smart-background-scroll-${p.animation.type} ${
       100 / (p.animation.speed || 5)
     }s linear infinite`;
   }};
