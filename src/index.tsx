@@ -1,29 +1,29 @@
-import styled from '@emotion/styled';
-import React, { ReactNode, useEffect, useMemo, useState } from 'react';
-import { useResizeDetector } from 'react-resize-detector';
-import stylesArr from './style';
-import './style.ts';
-import { getPosition } from './utils';
+import styled from "@emotion/styled";
+import React, { ReactNode, useEffect, useMemo, useState } from "react";
+import { useResizeDetector } from "react-resize-detector";
+import stylesArr from "./style";
+import "./style.ts";
+import { getPosition } from "./utils";
 
 const REPEAT = [1, 2];
 
 const styles: any = {
   SmartBackground: {
-    overflow: 'hidden',
-    position: 'absolute',
+    overflow: "hidden",
+    position: "absolute",
     top: 0,
     left: 0,
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     zIndex: 0,
-    backgroundRepeat: 'repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundRepeat: "repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   },
 };
 
 type Animation = {
-  type: 'left' | 'right' | 'top' | 'bottom';
+  type: "left" | "right" | "top" | "bottom";
   speed: number;
 };
 
@@ -45,7 +45,7 @@ const SmartBackground = (props: SmartBackgroundProps) => {
   const {
     underlayColor,
     underlayImage,
-    symbols = ['●'],
+    symbols = ["●"],
 
     symbolsStyle,
     random,
@@ -86,7 +86,7 @@ const SmartBackground = (props: SmartBackgroundProps) => {
       const heightFin = containerHeight - moHeight;
 
       const amount = Math.floor(
-        (widthFin * heightFin) / (CubeWidth * CubeWidth),
+        (widthFin * heightFin) / (CubeWidth * CubeWidth)
       );
       setAmount(amount);
     }
@@ -112,8 +112,8 @@ const SmartBackground = (props: SmartBackgroundProps) => {
     let hasLoadCss = false;
     for (let i = styleLength - 1; i > 0; i--) {
       if (
-        styleSheet['cssRules'][i] &&
-        styleSheet['cssRules'][i]['name'] === 'smart-background-scroll-top'
+        styleSheet["cssRules"][i] &&
+        styleSheet["cssRules"][i]["name"] === "smart-background-scroll-top"
       ) {
         hasLoadCss = true;
         break;
@@ -167,9 +167,9 @@ const SmartBackground = (props: SmartBackgroundProps) => {
       </div>
       <div
         style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
+          position: "absolute",
+          width: "100%",
+          height: "100%",
           top: 0,
           left: 0,
         }}
@@ -190,8 +190,8 @@ const SymbolList = styled.div<{
 }>`
   width: 100%;
   height: 100%;
-  display: ${(p) => (p.random || p.exact ? 'block' : 'flex')};
-  position: ${(p) => (p.exact ? 'relative' : '')};
+  display: ${(p) => (p.random || p.exact ? "block" : "flex")};
+  position: ${(p) => (p.exact ? "relative" : "")};
   flex-direction: row;
   animation: ${(p) => {
     if (!p.animation) {
@@ -208,33 +208,33 @@ const SymbolList = styled.div<{
       return;
     }
     if (
-      p.animation.type === 'left' ||
-      p.animation.type === 'right' ||
-      p.animation.type === 'bottom'
+      p.animation.type === "left" ||
+      p.animation.type === "right" ||
+      p.animation.type === "bottom"
     ) {
-      return 'absolute';
+      return "absolute";
     }
   }};
   top: ${(p) => {
     if (!p.animation) {
       return;
     }
-    if (p.animation.type === 'left' || p.animation.type === 'right') {
-      return '0';
+    if (p.animation.type === "left" || p.animation.type === "right") {
+      return "0";
     }
-    if (p.animation.type === 'bottom') {
-      return p.index === 1 ? 0 : '-100%';
+    if (p.animation.type === "bottom") {
+      return p.index === 1 ? 0 : "-100%";
     }
   }};
   left: ${(p) => {
     if (!p.animation) {
       return;
     }
-    if (p.animation.type === 'left') {
-      return p.index === 1 ? 0 : '100%';
+    if (p.animation.type === "left") {
+      return p.index === 1 ? 0 : "100%";
     }
-    if (p.animation.type === 'right') {
-      return p.index === 1 ? 0 : '-100%';
+    if (p.animation.type === "right") {
+      return p.index === 1 ? 0 : "-100%";
     }
   }};
 `;
@@ -250,17 +250,17 @@ const SymbolContainer = styled.div<{
 }>(({ fontSize, gap = 100, rotate, symbolsStyle, random, exact }) => {
   let fontSizeFin = fontSize || 90;
   return {
-    color: '#000',
-    opacity: '0.3',
-    width: exact ? 'fit-content' : fontSizeFin + 2 * gap,
-    height: exact ? 'fit-content' : fontSizeFin + 2 * gap,
-    lineHeight: fontSizeFin + 'px',
-    textAlign: 'center',
+    color: "#000",
+    opacity: "0.3",
+    width: exact ? "fit-content" : fontSizeFin + 2 * gap,
+    height: exact ? "fit-content" : fontSizeFin + 2 * gap,
+    lineHeight: fontSizeFin + "px",
+    textAlign: "center",
     padding: gap,
-    transform: exact ? 'none' : `rotate(${rotate}deg)`,
+    transform: exact ? "none" : `rotate(${rotate}deg)`,
     ...symbolsStyle,
-    position: random ? 'absolute' : 'unset',
+    position: random || exact ? "absolute" : "unset",
     ...getPosition(random, fontSizeFin),
-    display: 'inline-block',
+    display: "inline-block",
   };
 });
