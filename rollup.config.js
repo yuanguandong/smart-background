@@ -1,7 +1,7 @@
 import path from "path";
 import commonjs from "rollup-plugin-commonjs"; // commonjs模块转换插件
 import { eslint } from "rollup-plugin-eslint"; // eslint插件
-import less from 'rollup-plugin-less';
+import less from "rollup-plugin-less";
 import resolve from "rollup-plugin-node-resolve"; // 依赖引用插件
 import ts from "rollup-plugin-typescript2";
 import { uglify } from "rollup-plugin-uglify";
@@ -28,7 +28,18 @@ const esPlugin = eslint({
 const commonConf = {
   input: getPath("./src/index.tsx"),
   external: ["react"],
-  plugins: [uglify(), less(), resolve(extensions), commonjs(), esPlugin, tsPlugin],
+  plugins: [
+    uglify({
+      output: {
+        comments: false,
+      },
+    }),
+    less(),
+    resolve(extensions),
+    commonjs(),
+    esPlugin,
+    tsPlugin,
+  ],
 };
 // 需要导出的模块类型
 const outputMap = [
