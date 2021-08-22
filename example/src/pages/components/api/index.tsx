@@ -31,7 +31,7 @@ export default (props:any)=>{
     },{
       prop: `symbolsStyle`,
       desc: `符号样式`,
-      type: `Object`,
+      type: `React.CSSProperties`,
       default: `{color: '#000',opacity: '0.3'}`,
       required: `false`
     },{
@@ -70,7 +70,7 @@ export default (props:any)=>{
     },
     {
       prop: `childrenWrapStyle`,
-      desc: `子组件容器类名`,
+      desc: `子组件容器样式`,
       type: `React.CSSProperties`,
       default: ``,
       required: `false`
