@@ -1,6 +1,6 @@
 {
   "name": "smart-background",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Automatically generate the background of the symbol picture, so you no longer have to worry about the background 自动生成符号背景，让你不再为背景头疼",
   "keywords": [
     "react",
