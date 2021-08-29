@@ -269,7 +269,7 @@ const SymbolContainer = styled.div<{
     padding: gap,
     transform: exact ? "none" : `rotate(${rotate}deg)`,
     ...symbolsStyle,
-    position: random || exact ? "absolute" : "unset",
+    position: random ? "absolute" : "unset",
     ...getPosition(random, fontSizeFin),
     display: "inline-block",
   };
