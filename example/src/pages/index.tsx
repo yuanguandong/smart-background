@@ -110,6 +110,7 @@ const Index: React.FunctionComponent<IProps> = () => {
   const onCtrlB = () => {
     setCollapsed(!collapsed);
   };
+  console.log('packageInfo',packageInfo)
   return (
     <>
       <Helmet>
