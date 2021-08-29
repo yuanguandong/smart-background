@@ -351,6 +351,7 @@ const Index: React.FunctionComponent<IProps> = () => {
           寻找契合业务主题的背景十分耗费精力，总觉得做的背景不合适，如果直接用图片呢，逻辑是比较简单，但寻找到一张契合业务主题的图片也不是那么容易，所以想到用符号生成幕布一样的背景，从这个出发点做了这个组件，滚动的图片墙可能这个需求比较常见，用SmartBackground可以很快速的实现，希望可以帮到您，别忘了star哟
           <Title level={2}>Props</Title>
           <Api />
+          
           <Title level={2}>Tip 注意</Title>
           Background的高度默认继承父级元素
           如果Background有children，需要给Background的父级元素添加position:relative属性
